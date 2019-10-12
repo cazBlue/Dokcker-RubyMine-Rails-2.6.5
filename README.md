@@ -34,7 +34,7 @@ From the above guide: Replace the contents of config/database.yml with the follo
 Important that the host, username and password are set. Note that password etc can be configured, see postgress here: https://hub.docker.com/_/postgres
 
 
-##Rubymine interpreter can now be set to use docker-compose and spun up
+## Rubymine interpreter can now be set to use docker-compose and spun up
 https://blog.jetbrains.com/ruby/2019/03/rubymine-docker/#use_docker_docker_compose_as_a_remote_interpreter
 
 
