@@ -4,7 +4,7 @@ Ruby 2.6.5 docker-compose configuration with RubyMine debugging
 # NEW PROJECT
 ## 1: Create a blank Gemfile & Gemfile.lock
 
-## 2: Build docker container, this will setup rails and debug gems + correct versions of Node + Yarn
+## 2: Build docker container, this will setup rails and debug gems + compatible versions of Node + Yarn
 
 docker-compose build --no-cache
 
