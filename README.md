@@ -1,4 +1,4 @@
-# Dokcker-RubyMine-Rails-2.6.5
+# Docker-RubyMine-Rails-2.6.5
 Ruby 2.6.5 docker-compose configuration with RubyMine debugging
 
 # NEW PROJECT
