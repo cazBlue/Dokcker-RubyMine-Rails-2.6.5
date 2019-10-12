@@ -21,7 +21,20 @@ OR
 ## update rails config to point at dockerised postgres
 https://docs.docker.com/compose/rails/#connect-the-database
 
-Rubymine interpreter can now be set to use docker-compose and spun up
+From the above guide: Replace the contents of config/database.yml with the following:
+
+    default: &default
+    adapter: postgresql
+    encoding: unicode
+    host: db
+    username: postgres
+    password:
+    pool: 5
+
+Important that the host, username and password are set. Note that password etc can be configured, see postgress here: https://hub.docker.com/_/postgres
+
+
+##Rubymine interpreter can now be set to use docker-compose and spun up
 https://blog.jetbrains.com/ruby/2019/03/rubymine-docker/#use_docker_docker_compose_as_a_remote_interpreter
 
 
