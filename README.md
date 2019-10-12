@@ -12,11 +12,15 @@ docker-compose build --no-cache
 docker-compose run web rails new . --force --database=postgresql --skip-git && bundle
 
 ## 4: Configure database
-docker-compose run web rake db:create
-
+    docker-compose run web rake db:create
 OR
-
-"docker exec -it sh" and run "rails db:create"
+    
+    Create interactive shell
+    docker-compose run web sh
+    then run 
+    rails db:create
+    
+    Note: bundle install can also be run through the shell if needed
 
 ## update rails config to point at dockerised postgres
 https://docs.docker.com/compose/rails/#connect-the-database
