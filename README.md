@@ -41,6 +41,7 @@ https://blog.jetbrains.com/ruby/2019/03/rubymine-docker/#use_docker_docker_compo
 ### Resources
 Modified from guide here: https://docs.docker.com/compose/rails/
 For Ruby 2.6.5, Node 10 and Yarn for debugging in Rubymine
+
 External DB Volume mounts for Postrgres windows work around
   https://forums.docker.com/t/trying-to-get-postgres-to-work-on-persistent-windows-mount-two-issues/12456
   
