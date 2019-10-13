@@ -6,6 +6,8 @@ Ruby 2.6.5 docker-compose configuration with RubyMine debugging
 ## 1: Build docker container, this will setup rails and debug gems + compatible versions of Node + Yarn
 
     docker-compose build --no-cache
+    
+Note: Additional gems can be added to Gemfile.docker.config and the container re-build to include them at run time
 
 ## 2: Bring the project up
 
