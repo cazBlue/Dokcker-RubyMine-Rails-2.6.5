@@ -22,6 +22,11 @@ RUN gem install debase
 RUN mkdir /myapp
 WORKDIR /myapp
 
+#rails gems
+COPY Gemfile.docker.config /myapp/Gemfile
+COPY Gemfile.docker.config.lock /myapp/Gemfile.lock
+RUN bundle install
+
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
