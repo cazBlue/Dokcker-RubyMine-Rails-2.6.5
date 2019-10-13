@@ -21,17 +21,14 @@ RUN gem install debase
 #Note an empty Gemfile and Gemfile.lock are required for first run
 RUN mkdir /myapp
 WORKDIR /myapp
-#RUN touch Gemfile
-#RUN touch Gemfile.lock
-COPY Gemfile Gemfile
-COPY Gemfile.lock Gemfile.lock
-RUN bundle install
-#COPY . /myapp
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
+
+COPY bootstrap.sh /myapp/
+COPY database.docker.config.yml /myapp/
 
 EXPOSE 3000
 

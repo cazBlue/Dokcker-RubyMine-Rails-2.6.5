@@ -1,26 +1,5 @@
 version: '3'
 
-#Modified from guide here: https://docs.docker.com/compose/rails/
-#Modified for Ruby 2.6.5, Node 10 and Yarn for debugging in Rubymine
-#external DB Volume mounts for Postrgres windows work around
-
-#initial DB creation: https://docs.docker.com/compose/rails/#connect-the-database
-#can also docker exec -it sh and run rails db:create
-
-#NEW PROJECT
-#1: Create a blank Gemfile & Gemfile.lock
-#2: Build docker container, this will setup rails and debug gems + correct versions of Node + Yarn
-#docker-compose build --no-cache
-#3: build rails app
-#docker-compose run web rails new . --force --database=postgresql --skip-git && bundle
-#4: Configure database
-#docker-compose run web rake db:create
-#OR
-#"docker exec -it sh" and run "rails db:create"
-#update rails config to point at dockerised postgres
-#https://docs.docker.com/compose/rails/#connect-the-database
-#Rubymine interpreter can now be set to use docker-compose and spun up
-
 services:
   db:
     image: postgres
@@ -31,9 +10,10 @@ services:
   web:
     build: .
     container_name: rubyweb
-    #option if bundle is required to be re-run pre-launch
-    #command: bash -c "rm -f tmp/pids/server.pid && bundle && rails s -p 3000 -b '0.0.0.0'"
-    command: bash -c "rm -f tmp/pids/server.pid && rails s -p 3000 -b '0.0.0.0'"
+    #First run command
+    command: bash -c "/myapp/bootstrap.sh"
+    #Run server
+    #command: bash -c "rm -f tmp/pids/server.pid && rails s -p 3000 -b '0.0.0.0'"
     volumes:
       - .:/myapp
     ports:
